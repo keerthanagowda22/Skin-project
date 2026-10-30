@@ -1,0 +1,13 @@
+path: C:\Users\chetu\OneDrive\Desktop\Skin project\skin-disease
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: Acne
+  1: Eczema
+  2: Leprosy
+  3: Melasma
+  4: Psoriasis
+  5: Ringworm
+  6: Warts

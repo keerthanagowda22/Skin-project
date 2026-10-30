@@ -1,0 +1,209 @@
+.diet-container {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(54, 75, 173, 0.15);
+}
+
+.diet-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.diet-label {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #667eea;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.diet-condition-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+    color: #5d69c3;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    margin-bottom: 14px;
+}
+
+.diet-header h1 {
+    font-size: 38px;
+    color: #1f2958;
+    margin-bottom: 16px;
+    max-width: 760px;
+    line-height: 1.2;
+}
+
+.diet-subtitle {
+    color: #4f5f88;
+    line-height: 1.8;
+    max-width: 760px;
+    font-size: 17px;
+}
+
+.diet-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.diet-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #667eea 0%, #5b6bd4 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.diet-nav-link.secondary {
+    background: linear-gradient(135deg, #4b4f7c 0%, #3f476e 100%);
+}
+
+.diet-nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(102, 126, 234, 0.28);
+}
+
+.diet-focus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    margin-bottom: 34px;
+}
+
+.diet-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 247, 255, 0.94));
+    border-radius: 24px;
+    padding: 26px 24px;
+    box-shadow: 0 18px 38px rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.15);
+}
+
+.diet-card-highlight {
+    border-color: rgba(102, 126, 234, 0.25);
+}
+
+.diet-card h2 {
+    font-size: 24px;
+    color: #1f2958;
+    margin-bottom: 12px;
+}
+
+.diet-card p {
+    color: #596585;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.diet-tab-panel {
+    background: linear-gradient(180deg, #f5f8ff 0%, #edf2ff 100%);
+    border-radius: 24px;
+    padding: 30px 28px;
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.06);
+    border: 1px solid rgba(102, 126, 234, 0.12);
+}
+
+.diet-tabs {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.diet-tab {
+    padding: 12px 20px;
+    background: transparent;
+    border: 1.5px solid rgba(102, 126, 234, 0.18);
+    border-radius: 999px;
+    color: #49588d;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.diet-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #5a6bd9 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.22);
+}
+
+.diet-tab:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.diet-content {
+    padding: 8px 4px 0;
+}
+
+.diet-section-content {
+    animation: fadeInContent 0.3s ease;
+}
+
+.diet-section-content h3 {
+    color: #1f2958;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.diet-section-content ul {
+    list-style: disc inside;
+    color: #4f5f88;
+    margin-bottom: 18px;
+    line-height: 1.9;
+    padding-left: 10px;
+}
+
+.diet-section-content ul li {
+    margin-bottom: 12px;
+}
+
+.diet-section-content p {
+    color: #5f6d8f;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+    .diet-header {
+        flex-direction: column;
+    }
+
+    .diet-header h1 {
+        font-size: 30px;
+    }
+
+    .diet-tab-panel {
+        padding: 22px 18px;
+    }
+}

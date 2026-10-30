@@ -1,0 +1,20 @@
+{
+  "name": "skin-essentials-test-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local test-mode catalogue and Razorpay checkout for Skin Essentials",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "razorpay": "^2.9.6"
+  }
+}

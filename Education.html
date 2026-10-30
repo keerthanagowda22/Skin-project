@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Module - Skin Disease Information</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Education-style.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+
+<body>
+
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login">
+                <span class="nav-icon">🔐</span>
+                <span>Login</span>
+            </a>
+
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="Education.html" class="sidebar-item" data-page="education">
+                <span class="nav-icon">📚</span>
+                <span>Education</span>
+            </a>
+
+            <a href="diet.html" class="sidebar-item" data-page="diet">
+                <span class="nav-icon">🥗</span>
+                <span>Diet Plan</span>
+            </a>
+
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor">
+                <span class="nav-icon">👨‍⚕️</span>
+                <span>Doctor Consultation</span>
+            </a>
+
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials">
+                <span class="nav-icon">🧴</span>
+                <span>Skin Essentials</span>
+            </a>
+
+            <a href="feedback.html" class="sidebar-item" data-page="feedback">
+                <span class="nav-icon">⭐</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout">
+                <span class="nav-icon">🚪</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <button
+        id="sidebarToggle"
+        class="sidebar-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+    >
+        ☰
+    </button>
+
+
+    <div class="education-container">
+
+        <!-- Hidden compatibility buttons.
+             These are kept because education-script.js expects these IDs.
+             They will NOT be visible on the page. -->
+        <button id="backBtn" type="button" style="display: none;">Back</button>
+        <button id="logoutBtn" type="button" style="display: none;">Logout</button>
+
+
+        <!-- Header -->
+        <header class="education-header">
+            <div class="header-content">
+
+                <h1 data-i18n="edu-title">
+                    Educational Module
+                </h1>
+
+                <p data-i18n="edu-subtitle">
+                    Learn About Skin Diseases
+                </p>
+
+            </div>
+        </header>
+
+
+        <div class="education-content">
+
+            <!-- Search and Filter Section -->
+            <section class="search-section">
+
+                <div class="search-container">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="search-bar"
+                        placeholder="Search diseases..."
+                        data-i18n-placeholder="search-placeholder"
+                    >
+
+                    <svg
+                        class="search-icon"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5
+                            16 5.91 13.09 3 9.5 3S3 5.91 3 9.5
+                            5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57
+                            l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0
+                            C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5
+                            14 7.01 14 9.5 11.99 14 9.5 14z"
+                            fill="currentColor"
+                        />
+                    </svg>
+
+                </div>
+
+
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                        data-i18n="filter-all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="fungal"
+                        data-i18n="filter-fungal"
+                    >
+                        Fungal
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="bacterial"
+                        data-i18n="filter-bacterial"
+                    >
+                        Bacterial
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="viral"
+                        data-i18n="filter-viral"
+                    >
+                        Viral
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="inflammatory"
+                        data-i18n="filter-inflammatory"
+                    >
+                        Inflammatory
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Did You Know Section -->
+            <section class="tips-section">
+
+                <div class="tip-card">
+
+                    <span
+                        class="tip-icon"
+                        data-i18n="did-you-know"
+                    >
+                        💡 Did You Know?
+                    </span>
+
+                    <p id="tipContent">
+                        The largest organ of your body is your skin,
+                        covering about 16 feet of surface area!
+                    </p>
+
+                    <button
+                        class="tip-next-btn"
+                        id="nextTipBtn"
+                        data-i18n="next-tip"
+                    >
+                        Next Tip
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Disease Database Section -->
+            <section class="diseases-section">
+
+                <h2 data-i18n="diseases-heading">
+                    Disease Database
+                </h2>
+
+                <div
+                    id="diseasesGrid"
+                    class="diseases-grid"
+                >
+                    <!-- Disease cards will be populated here by education-script.js -->
+                </div>
+
+            </section>
+
+
+            <!-- Bookmarks Section -->
+            <section
+                class="bookmarks-section hidden"
+                id="bookmarksSection"
+            >
+
+                <h2 data-i18n="bookmarked">
+                    Your Bookmarks
+                </h2>
+
+                <div
+                    id="bookmarksList"
+                    class="bookmarks-list"
+                >
+                    <p>
+                        No bookmarks yet.
+                        Click the 🔖 icon on any disease to save it.
+                    </p>
+                </div>
+
+                <button
+                    class="clear-bookmarks-btn"
+                    id="clearBookmarksBtn"
+                    data-i18n="clear-bookmarks"
+                >
+                    Clear All Bookmarks
+                </button>
+
+            </section>
+
+        </div>
+
+
+        <!-- Disease Detail Modal -->
+        <div
+            id="diseaseModal"
+            class="modal hidden"
+        >
+
+            <div class="modal-content">
+
+                <button
+                    class="modal-close"
+                    id="closeModalBtn"
+                >
+                    &times;
+                </button>
+
+
+                <div class="modal-header">
+
+                    <h2 id="modalDiseaseName"></h2>
+
+                    <div class="modal-actions">
+
+                        <button
+                            class="action-btn bookmark-btn"
+                            id="bookmarkBtn"
+                            title="Bookmark this disease"
+                        >
+                            <span class="bookmark-icon">🔖</span>
+                        </button>
+
+                        <button
+                            class="action-btn share-btn"
+                            id="shareBtn"
+                            data-i18n="share"
+                        >
+                            Share
+                        </button>
+
+                        <button
+                            class="action-btn print-btn"
+                            id="printBtn"
+                            data-i18n="print"
+                        >
+                            Print
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- Description -->
+                    <div class="disease-info-section">
+
+                        <h3 data-i18n="description">
+                            Description
+                        </h3>
+
+                        <p id="modalDiseaseDescription"></p>
+
+                    </div>
+
+
+                    <!-- Causes -->
+                    <div class="disease-info-section">
+
+                        <h3 data-i18n="causes">
+                            Causes
+                        </h3>
+
+                        <ul id="modalDiseaseCauses"></ul>
+
+                    </div>
+
+
+                    <!-- Symptoms -->
+                    <div class="disease-info-section">
+
+                        <h3 data-i18n="symptoms">
+                            Symptoms
+                        </h3>
+
+                        <ul id="modalDiseaseSymptoms"></ul>
+
+                    </div>
+
+
+                    <!-- Prevention -->
+                    <div class="disease-info-section">
+
+                        <h3 data-i18n="prevention">
+                            Prevention Tips
+                        </h3>
+
+                        <ul id="modalDiseasePrevention"></ul>
+
+                    </div>
+
+
+                    <!-- Remedies -->
+                    <div class="disease-info-section">
+
+                        <h3 data-i18n="remedies">
+                            Available Remedies
+                        </h3>
+
+                        <div class="remedies-tabs">
+
+                            <button
+                                class="remedy-tab active"
+                                data-remedy="home"
+                            >
+                                Home
+                            </button>
+
+                            <button
+                                class="remedy-tab"
+                                data-remedy="allopathic"
+                            >
+                                Allopathic
+                            </button>
+
+                            <button
+                                class="remedy-tab"
+                                data-remedy="ayurvedic"
+                            >
+                                Ayurvedic
+                            </button>
+
+                        </div>
+
+                        <ul id="modalDiseaseRemedies"></ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript Files -->
+    <script src="translations.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="education-script.js"></script>
+
+</body>
+</html>

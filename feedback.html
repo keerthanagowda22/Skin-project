@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Share anonymous feedback and rate your experience with the Skin Disease Detection System.">
+    <meta name="theme-color" content="#f5f7f3">
+    <title>Feedback &amp; Rating | Skin Disease Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+<body>
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login"><span class="nav-icon">🔐</span><span>Login</span></a>
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard"><span class="nav-icon">🏠</span><span>Dashboard</span></a>
+            <a href="Education.html" class="sidebar-item" data-page="education"><span class="nav-icon">📚</span><span>Education</span></a>
+            <a href="diet.html" class="sidebar-item" data-page="diet"><span class="nav-icon">🥗</span><span>Diet Plan</span></a>
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor"><span class="nav-icon">👨‍⚕️</span><span>Doctor Consultation</span></a>
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials"><span class="nav-icon">🧴</span><span>Skin Essentials</span></a>
+            <a href="feedback.html" class="sidebar-item" data-page="feedback"><span class="nav-icon">⭐</span><span>Feedback</span></a>
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout"><span class="nav-icon">🚪</span><span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <header class="feedback-header">
+        <a class="feedback-brand" href="dashboard.html">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>Skin Health</span>
+        </a>
+        
+    </header>
+
+    <main class="feedback-main">
+        <section class="feedback-card" aria-labelledby="feedbackTitle">
+            <p class="eyebrow"><span aria-hidden="true">✦</span> Your experience matters</p>
+            <h1 id="feedbackTitle">Feedback &amp; Rating</h1>
+            <p class="intro">Tell us what worked well and what we can improve. Your feedback helps us make the platform better for everyone.</p>
+            <p class="privacy-note"><strong>Your privacy matters.</strong> We do not ask for your name or email. Feedback is saved to this app's local database. Please do not include personal or medical details.</p>
+
+            <form id="feedbackForm">
+                <fieldset class="rating-fieldset">
+                    <legend>How would you rate your experience?</legend>
+                    <div class="rating-options" role="radiogroup" aria-label="Experience rating">
+                        <label><input type="radio" name="rating" value="1" required><span aria-hidden="true">★</span><span class="sr-only">1 star</span></label>
+                        <label><input type="radio" name="rating" value="2"><span aria-hidden="true">★</span><span class="sr-only">2 stars</span></label>
+                        <label><input type="radio" name="rating" value="3"><span aria-hidden="true">★</span><span class="sr-only">3 stars</span></label>
+                        <label><input type="radio" name="rating" value="4"><span aria-hidden="true">★</span><span class="sr-only">4 stars</span></label>
+                        <label><input type="radio" name="rating" value="5"><span aria-hidden="true">★</span><span class="sr-only">5 stars</span></label>
+                    </div>
+                    <p id="ratingHint" class="field-hint" aria-live="polite">Choose from 1 star (Needs improvement) to 5 stars (Excellent).</p>
+                </fieldset>
+
+                <label class="field-label" for="feedbackModule">Which part of the platform is this about?</label>
+                <select id="feedbackModule" name="module" required>
+                    <option value="overall">Overall experience</option>
+                    <option value="dashboard">Dashboard</option>
+                    <option value="education">Education</option>
+                    <option value="diet">Diet plan</option>
+                    <option value="doctor-consultation">Doctor consultation</option>
+                    <option value="skin-essentials">Skin Essentials</option>
+                </select>
+
+                <label class="field-label" for="feedbackMessage">What would you like us to know?</label>
+                <textarea id="feedbackMessage" name="message" rows="6" minlength="10" maxlength="2000" aria-describedby="feedbackPrivacyHint characterCount" placeholder="Share what went well or what we could improve." required></textarea>
+                <div class="message-footer">
+                    <p id="feedbackPrivacyHint" class="field-hint">At least 10 characters. Please leave out personal or medical information.</p>
+                    <span id="characterCount" aria-live="polite">0/2000</span>
+                </div>
+
+                <p id="feedbackStatus" class="feedback-status" role="status" aria-live="polite"></p>
+                <button id="submitFeedback" class="submit-feedback" type="submit">Submit feedback</button>
+            </form>
+        </section>
+    </main>
+    <script src="sidebar.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>

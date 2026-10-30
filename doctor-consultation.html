@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find dermatologists, hospitals, and skin clinics near your current location or any place in India.">
+    <title>Doctor Consultation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="doctor-consultation-style.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+<body>
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login"><span class="nav-icon">🔐</span><span>Login</span></a>
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard"><span class="nav-icon">🏠</span><span>Dashboard</span></a>
+            <a href="Education.html" class="sidebar-item" data-page="education"><span class="nav-icon">📚</span><span>Education</span></a>
+            <a href="diet.html" class="sidebar-item" data-page="diet"><span class="nav-icon">🥗</span><span>Diet Plan</span></a>
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor"><span class="nav-icon">👨‍⚕️</span><span>Doctor Consultation</span></a>
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials"><span class="nav-icon">🧴</span><span>Skin Essentials</span></a>
+            <a href="feedback.html" class="sidebar-item" data-page="feedback"><span class="nav-icon">⭐</span><span>Feedback</span></a>
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout"><span class="nav-icon">🚪</span><span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <main class="consultation-container">
+        <header class="consultation-header">
+            <div>
+                <p class="consultation-label">Doctor Consultation Module</p>
+                <h1>Find skin care near you</h1>
+                <p class="consultation-subtitle">Search for dermatologists, skin clinics, and hospitals around your current location or search anywhere in India.</p>
+            </div>
+           
+        </header>
+
+        <section class="consultation-grid" aria-label="Find a healthcare provider">
+            <div class="consultation-panel search-panel">
+                <div class="section-heading">
+                    <span class="section-icon" aria-hidden="true">📍</span>
+                    <div>
+                        <h2>Search near you</h2>
+                        <p>Use GPS or search a city, area, or postal code.</p>
+                    </div>
+                </div>
+
+                <button id="locationButton" class="location-button" type="button">Use my current location</button>
+                <p id="locationStatus" class="location-status" role="status" aria-live="polite">Your location is used to find nearby healthcare listings.</p>
+
+                <form id="placeSearchForm" class="place-search-form">
+                    <label for="placeType">I am looking for</label>
+                    <select id="placeType">
+                        <option value="dermatologist">Dermatologists</option>
+                        <option value="skin clinic">Skin clinics</option>
+                        <option value="hospital">Hospitals</option>
+                    </select>
+
+                    <label for="placeLocation">City, area, or postal code</label>
+                    <div class="location-input-row">
+                        <input id="placeLocation" type="text" placeholder="e.g. Moodbidri, Karnataka" autocomplete="street-address">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="consultation-panel map-panel">
+                <div class="map-heading">
+                    <h2>Nearby places</h2>
+                    <span id="resultsCount" class="live-badge">Search to see places</span>
+                </div>
+                <div id="placesMap" class="places-map" role="region" aria-label="Map showing nearby healthcare providers">
+                    <div class="map-placeholder">
+                        <span class="map-pin" aria-hidden="true">＋</span>
+                        <span class="map-preview-label">Loading map…</span>
+                    </div>
+                </div>
+                <p id="placesStatus" class="map-caption" role="status" aria-live="polite">Search using GPS or a city to see nearby providers here.</p>
+                <div id="placeResults" class="place-results" aria-live="polite"></div>
+                <a id="mapOpenLink" class="map-open-link" href="https://www.google.com/maps/search/?api=1&amp;query=dermatologist+near+me" target="_blank" rel="noopener noreferrer">
+                    Open larger map in Google Maps (optional) <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="consultation-panel contact-panel">
+            <div class="section-heading">
+                <span class="section-icon" aria-hidden="true">☎</span>
+                <div>
+                    <h2>Call or message a clinic</h2>
+                    <p>Nearby clinics and their contact details for the current search location.</p>
+                </div>
+            </div>
+            <p id="contactResultsStatus" class="contact-help" role="status" aria-live="polite">Search using GPS or a city to load nearby clinics and available phone numbers.</p>
+            <div id="contactResults" class="contact-results" aria-live="polite"></div>
+        </section>
+
+        <aside class="consultation-note">
+            <strong>For urgent or life-threatening symptoms:</strong> contact your local emergency service or go to the nearest emergency department. Map listings may be incomplete or out of date; confirm details with the provider.
+        </aside>
+    </main>
+
+    <script src="google-maps-config.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="doctor-consultation.js"></script>
+</body>
+</html>

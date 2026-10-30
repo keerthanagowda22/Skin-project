@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection System - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+<body class="login-page">
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login"><span class="nav-icon">🔐</span><span>Login</span></a>
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard"><span class="nav-icon">🏠</span><span>Dashboard</span></a>
+            <a href="Education.html" class="sidebar-item" data-page="education"><span class="nav-icon">📚</span><span>Education</span></a>
+            <a href="diet.html" class="sidebar-item" data-page="diet"><span class="nav-icon">🥗</span><span>Diet Plan</span></a>
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor"><span class="nav-icon">👨‍⚕️</span><span>Doctor Consultation</span></a>
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials"><span class="nav-icon">🧴</span><span>Skin Essentials</span></a>
+            <a href="feedback.html" class="sidebar-item" data-page="feedback"><span class="nav-icon">⭐</span><span>Feedback</span></a>
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout"><span class="nav-icon">🚪</span><span>Logout</span></a>
+        </nav>
+    </aside>
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="container">
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="logo">
+                <h1 data-i18n="app-title">Skin Disease Detection System</h1>
+            </div>
+
+            <h2 data-i18n="login-heading">Login</h2>
+
+            <form id="loginForm">
+                <div class="form-group" id="nameGroup" hidden>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="name" autocomplete="name" minlength="2" maxlength="80">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="email-label">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        autocomplete="email"
+                        placeholder="example@email.com"
+                        data-i18n-placeholder="email-placeholder"
+                        required
+                    >
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-i18n="password-label">Password</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        data-i18n-placeholder="password-placeholder"
+                        required
+                    >
+                    <span class="error-msg" id="passwordError"></span>
+                </div>
+
+                <div class="form-group" id="confirmPasswordGroup" hidden>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password">
+                    <span class="error-msg" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe" data-i18n="remember-me">Remember Me</label>
+                </div>
+
+                <button type="submit" class="login-btn" data-i18n="login-button">Login</button>
+                <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="signup-link">
+                <p><span id="signupPrompt" data-i18n="no-account">Don't have an account?</span> <a href="#" id="signupToggle" data-i18n="register-link">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

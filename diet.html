@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Module</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="diet-style.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+<body>
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login"><span class="nav-icon">🔐</span><span>Login</span></a>
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard"><span class="nav-icon">🏠</span><span>Dashboard</span></a>
+            <a href="Education.html" class="sidebar-item" data-page="education"><span class="nav-icon">📚</span><span>Education</span></a>
+            <a href="diet.html" class="sidebar-item" data-page="diet"><span class="nav-icon">🥗</span><span>Diet Plan</span></a>
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor"><span class="nav-icon">👨‍⚕️</span><span>Doctor Consultation</span></a>
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials"><span class="nav-icon">🧴</span><span>Skin Essentials</span></a>
+            <a href="feedback.html" class="sidebar-item" data-page="feedback"><span class="nav-icon">⭐</span><span>Feedback</span></a>
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout"><span class="nav-icon">🚪</span><span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <div class="diet-container">
+        <header class="diet-header">
+            <div>
+                <p class="diet-label">Diet Plan Module</p>
+                <div class="diet-condition-pill" id="dietConditionPill">General skin health</div>
+                <h1 id="dietTitle">Nutrition & Wellness for Healthy Skin</h1>
+                <p class="diet-subtitle" id="dietSubtitle">A dedicated Diet Plan Module recommends food habits and nutrition guidelines based on the identified skin condition, promoting holistic health management.</p>
+            </div>
+            
+        </header>
+
+        <section class="diet-focus">
+            <div class="diet-card diet-card-highlight">
+                <h2 id="focusTitleOne">Balanced Nutrition</h2>
+                <p id="focusTextOne">Choose the right vitamins, minerals, and food groups that support skin repair, reduce inflammation, and promote glowing skin.</p>
+            </div>
+            <div class="diet-card diet-card-highlight">
+                <h2 id="focusTitleTwo">Meditation & Yoga</h2>
+                <p id="focusTextTwo">Learn gentle yoga poses and relaxation techniques designed to support circulation, reduce stress, and complement your skin care routine.</p>
+            </div>
+        </section>
+
+        <section class="diet-tab-panel">
+            <div class="diet-tabs">
+                <button class="diet-tab active" data-tab="nutrition">Nutrition</button>
+                <button class="diet-tab" data-tab="yoga">Meditation & Yoga</button>
+                <button class="diet-tab" data-tab="habits">Healthy Habits</button>
+            </div>
+
+            <div class="diet-content" id="dietContent">
+                <article class="diet-section-content" data-content="nutrition">
+                    <h3>Skin-Supporting Foods</h3>
+                    <ul>
+                        <li>Leafy greens, berries, and fatty fish for antioxidants and omega-3s.</li>
+                        <li>Probiotic-rich yogurt and fermented foods to support gut-skin balance.</li>
+                        <li>Hydrating fruits like cucumber, watermelon, and citrus.</li>
+                        <li>Whole grains, nuts, and seeds for sustained energy and skin repair.</li>
+                    </ul>
+                    <p>Focus on a colorful plate with lean protein and healthy fats to reduce skin inflammation and improve overall radiance.</p>
+                </article>
+
+                <article class="diet-section-content hidden" data-content="yoga">
+                    <h3>Relaxation Practices</h3>
+                    <ul>
+                        <li>Deep breathing exercises to calm the nervous system.</li>
+                        <li>Gentle yoga flows like Cat-Cow and Child's Pose for circulation.</li>
+                        <li>Meditation sessions to lower stress hormones and improve sleep.</li>
+                        <li>Mindful grounding routines to support emotional and skin health.</li>
+                    </ul>
+                    <p>These practices help reduce stress-related skin flare-ups while supporting healthier habits from the inside out.</p>
+                </article>
+
+                <article class="diet-section-content hidden" data-content="habits">
+                    <h3>Daily Nutrition Habits</h3>
+                    <ul>
+                        <li>Drink plenty of water and herbal teas throughout the day.</li>
+                        <li>Limit refined sugar, fried foods, and processed snacks.</li>
+                        <li>Include fresh whole foods at every meal for sustained energy.</li>
+                        <li>Track simple nutrition goals and stay consistent with meal timing.</li>
+                    </ul>
+                    <p>Healthy routines make it easier to keep your skin glowing, especially when combined with rest and gentle movement.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script src="diet-script.js"></script>
+</body>
+</html>

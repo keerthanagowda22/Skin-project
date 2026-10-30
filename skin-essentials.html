@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore skincare essentials, browse the product catalogue, and save items to your cart.">
+    <meta name="theme-color" content="#f7f8f5">
+    <title>Skin Essentials | Skin Disease Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skin-essentials.css">
+    <link rel="stylesheet" href="unified-theme.css">
+</head>
+<body class="essentials-page">
+    <div id="sidebarBackdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <aside id="sidebarMenu" class="sidebar-menu" aria-label="Sidebar navigation">
+        <div class="sidebar-header">
+            <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation">☰</button>
+            <span>Navigation</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-item" data-page="login"><span class="nav-icon">🔐</span><span>Login</span></a>
+            <a href="dashboard.html" class="sidebar-item" data-page="dashboard"><span class="nav-icon">🏠</span><span>Dashboard</span></a>
+            <a href="Education.html" class="sidebar-item" data-page="education"><span class="nav-icon">📚</span><span>Education</span></a>
+            <a href="diet.html" class="sidebar-item" data-page="diet"><span class="nav-icon">🥗</span><span>Diet Plan</span></a>
+            <a href="doctor-consultation.html" class="sidebar-item" data-page="doctor"><span class="nav-icon">👨‍⚕️</span><span>Doctor Consultation</span></a>
+            <a href="skin-essentials.html" class="sidebar-item" data-page="essentials"><span class="nav-icon">🧴</span><span>Skin Essentials</span></a>
+            <a href="feedback.html" class="sidebar-item" data-page="feedback"><span class="nav-icon">⭐</span><span>Feedback</span></a>
+            <a href="index.html" class="sidebar-item logout-link" data-page="logout"><span class="nav-icon">🚪</span><span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <header class="shop-header">
+        <a class="shop-brand" href="dashboard.html" aria-label="Skin health home">
+            <span class="brand-icon" aria-hidden="true">✳</span>
+            <span>Skin<span class="brand-light">Essentials</span></span>
+        </a>
+        
+        <button id="cartOpenButton" class="cart-open-button" type="button" aria-haspopup="dialog" aria-controls="cartDialog">
+            <span aria-hidden="true">▱</span> My cart <span id="cartCount" class="cart-count">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <div class="hero-content">
+                <p class="shop-eyebrow">A considered care routine</p>
+                <h1>Everyday care,<br><em>made simpler.</em></h1>
+                <p>Explore skincare essentials and keep items in your cart or save them for later. Choose products with guidance from your healthcare professional.</p>
+                <a href="#catalogue" class="hero-link">Explore the catalogue <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="art-sun"></div>
+                <div class="art-bottle bottle-one"><span></span></div>
+                <div class="art-bottle bottle-two"><span></span></div>
+                <div class="art-leaf leaf-one"></div>
+                <div class="art-leaf leaf-two"></div>
+                <span class="art-label">SKIN<br>ESSENTIALS</span>
+            </div>
+        </section>
+
+        <section id="catalogue" class="catalogue-section">
+            <div class="catalogue-heading">
+                <div>
+                    <p class="shop-eyebrow">The essentials edit</p>
+                    <h2>Browse the catalogue</h2>
+                    <p class="catalogue-disclaimer">Browse everyday skincare essentials by category and skin type. Product names, prices and images are demo content and can be customized in the product data.</p>
+                </div>
+                <label class="product-search">
+                    <span class="sr-only">Search products</span>
+                    <span aria-hidden="true">⌕</span>
+                    <input id="productSearch" type="search" placeholder="Search the catalogue">
+                </label>
+            </div>
+
+            <div class="catalogue-toolbar">
+                <div id="categoryFilters" class="category-filters" aria-label="Filter products by category">
+                    <button type="button" class="filter-chip active" data-category="all" aria-pressed="true">All products</button>
+                    <button type="button" class="filter-chip" data-category="cleanser" aria-pressed="false">Cleansers</button>
+                    <button type="button" class="filter-chip" data-category="face-wash" aria-pressed="false">Face wash</button>
+                    <button type="button" class="filter-chip" data-category="moisturizer" aria-pressed="false">Moisturizers</button>
+                    <button type="button" class="filter-chip" data-category="sunscreen" aria-pressed="false">Sunscreens</button>
+                    <button type="button" class="filter-chip" data-category="serum" aria-pressed="false">Serums</button>
+                    <button type="button" class="filter-chip" data-category="acne-care" aria-pressed="false">Acne care</button>
+                    <button type="button" class="filter-chip" data-category="soothing-care" aria-pressed="false">Aloe / soothing</button>
+                    <button type="button" class="filter-chip" data-category="face-mask" aria-pressed="false">Face masks</button>
+                    <button type="button" class="filter-chip" data-category="lip-care" aria-pressed="false">Lip care</button>
+                </div>
+                <span id="productCount" class="product-count" aria-live="polite"></span>
+            </div>
+
+            <div id="productGrid" class="product-grid"></div>
+            <p id="emptySearch" class="empty-search hidden">No products match that search.</p>
+            <p class="catalogue-note"><strong>Demo catalogue:</strong> Product names, images and INR prices are examples only. Check ingredients and consult a qualified healthcare professional to determine what is suitable for your skin.</p>
+        </section>
+
+        <section class="shop-guidance">
+            <div class="guidance-mark" aria-hidden="true">✳</div>
+            <div>
+                <p class="shop-eyebrow">Choose with care</p>
+                <h2>Not sure what suits you?</h2>
+                <p>Ask a qualified healthcare professional before choosing products for a skin concern. Product suitability can vary from person to person.</p>
+            </div>
+            <a class="guidance-link" href="doctor-consultation.html">Find a clinic <span aria-hidden="true">↗</span></a>
+            <a class="guidance-link" href="feedback.html">Next tab: Feedback &amp; Rating <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+
+    <div id="cartBackdrop" class="cart-backdrop hidden"></div>
+    <aside id="cartDialog" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="cart-header">
+            <div><p class="shop-eyebrow">Your selections</p><h2 id="cartTitle">My cart <span id="drawerCartCount">(0)</span></h2></div>
+            <button id="cartCloseButton" class="icon-button" type="button" aria-label="Close cart">×</button>
+        </div>
+        <p id="cartNotice" class="cart-notice" role="status" aria-live="polite">Demo cart only. Cart contents are saved in this browser. Checkout does not collect personal or payment details and does not create a real order.</p>
+        <div id="cartItems" class="cart-items"></div>
+        <div id="savedItemsSection" class="saved-items-section hidden">
+            <h3>Saved for later</h3>
+            <div id="savedItems" class="saved-items"></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">₹0.00</strong></div>
+            <button id="checkoutButton" class="checkout-button" type="button" disabled>Review demo order</button>
+            <p class="shipping-note">Demo checkout only. No payment or shipment will be made.</p>
+            <a href="#catalogue" id="continueShopping" class="continue-shopping">Continue browsing</a>
+        </div>
+    </aside>
+
+    <div id="checkoutBackdrop" class="cart-backdrop hidden"></div>
+    <section id="checkoutDialog" class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+        <div class="cart-header">
+            <div><p class="shop-eyebrow">No payment required</p><h2 id="checkoutTitle">Review your order</h2></div>
+            <button id="checkoutCloseButton" class="icon-button" type="button" aria-label="Close checkout">×</button>
+        </div>
+        <p class="cart-notice">This is a local demo confirmation only. No personal details are requested, no payment is processed, and no products will be shipped.</p>
+        <div id="checkoutSummary" class="checkout-summary"></div>
+        <form id="checkoutForm" class="checkout-form">
+            <p id="checkoutStatus" class="checkout-status" role="status" aria-live="polite"></p>
+            <button id="payButton" class="checkout-button pay-button" type="submit">Confirm demo order</button>
+        </form>
+    </section>
+
+    <div id="shopToast" class="shop-toast" role="status" aria-live="polite"></div>
+    <script src="sidebar.js"></script>
+    <script src="skin-essentials.js"></script>
+</body>
+</html>

@@ -1,0 +1,908 @@
+:root {
+    color-scheme: light;
+    --page-bg: #f7f8f5;
+    --card-bg: #ffffff;
+    --primary-text: #26372e;
+    --secondary-text: #68756d;
+    --primary-green: #536f5d;
+    --border-color: #e3e8e2;
+    --soft-sage: #ecefe8;
+    --card-shadow: 0 12px 32px rgba(43, 66, 48, 0.07);
+    --card-radius: 12px;
+}
+
+body:not(.essentials-page) {
+    display: block;
+    min-height: 100vh;
+    padding: 0;
+    background: var(--page-bg);
+    color: var(--primary-text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body:not(.essentials-page) h1,
+body:not(.essentials-page) h2,
+body:not(.essentials-page) h3 {
+    color: var(--primary-text);
+}
+
+body:not(.essentials-page) input:not([type="checkbox"]):not([type="radio"]),
+body:not(.essentials-page) select,
+body:not(.essentials-page) textarea {
+    border-color: var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--primary-text);
+}
+
+body:not(.essentials-page) input:not([type="checkbox"]):not([type="radio"]):focus,
+body:not(.essentials-page) select:focus,
+body:not(.essentials-page) textarea:focus {
+    border-color: #8dab96;
+    outline-color: rgba(83, 111, 93, 0.18);
+}
+
+body:not(.essentials-page) .sidebar-toggle,
+body:not(.essentials-page) .sidebar-close {
+    border: 1px solid rgba(83, 111, 93, 0.16);
+    border-radius: 11px;
+    background: var(--primary-green);
+    box-shadow: 0 8px 22px rgba(43, 66, 48, 0.18);
+    color: #fff;
+}
+
+body:not(.essentials-page) .sidebar-toggle:hover,
+body:not(.essentials-page) .sidebar-close:hover {
+    background: #405a49;
+    box-shadow: 0 11px 25px rgba(43, 66, 48, 0.22);
+}
+
+body:not(.essentials-page) .sidebar-close {
+    border-color: var(--border-color);
+    background: var(--soft-sage);
+    box-shadow: none;
+    color: var(--primary-green);
+}
+
+body:not(.essentials-page) .sidebar-menu {
+    border-right: 1px solid var(--border-color);
+    background: var(--card-bg);
+    box-shadow: 8px 0 28px rgba(38, 55, 46, 0.14);
+}
+
+body:not(.essentials-page) .sidebar-header {
+    border-bottom: 1px solid var(--border-color);
+    background: var(--soft-sage);
+    color: var(--primary-text);
+}
+
+body:not(.essentials-page) .sidebar-item {
+    color: var(--primary-text);
+}
+
+body:not(.essentials-page) .sidebar-item:hover {
+    background: var(--soft-sage);
+}
+
+body:not(.essentials-page) .sidebar-item.active {
+    background: var(--primary-green);
+    box-shadow: 0 7px 17px rgba(43, 66, 48, 0.15);
+    color: #fff;
+}
+
+body:not(.essentials-page) .sidebar-backdrop {
+    background: rgba(31, 44, 36, 0.36);
+}
+
+/* Login */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 36px 20px;
+    background:
+        radial-gradient(ellipse at 14% 8%, rgba(217, 230, 216, 0.58), transparent 32rem),
+        var(--page-bg);
+}
+
+.login-page .container {
+    width: min(100%, 450px);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login-page .login-card {
+    margin-top: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 38px 32px;
+    background: var(--card-bg);
+    box-shadow: 0 18px 48px rgba(43, 66, 48, 0.1);
+}
+
+.login-page .logo h1 {
+    color: var(--primary-green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.login-page .login-card h2 {
+    color: var(--primary-text);
+}
+
+.login-page .form-group label {
+    color: var(--primary-text);
+}
+
+.login-page .form-group input[type="email"],
+.login-page .form-group input[type="password"] {
+    border: 1px solid var(--border-color);
+    background: #fbfcfa;
+    color: var(--primary-text);
+}
+
+.login-page .form-group input[type="email"]:focus,
+.login-page .form-group input[type="password"]:focus {
+    border-color: #8dab96;
+    box-shadow: 0 0 0 3px rgba(83, 111, 93, 0.13);
+}
+
+.login-page .form-group.checkbox input[type="checkbox"] {
+    accent-color: var(--primary-green);
+}
+
+.login-page .form-group.checkbox label,
+.login-page .divider span {
+    color: var(--secondary-text);
+}
+
+.login-page .divider::before,
+.login-page .divider::after {
+    background-color: var(--border-color);
+}
+
+.login-page .login-btn {
+    border-radius: 8px;
+    background: var(--primary-green);
+}
+
+.login-page .login-btn:hover {
+    background: #405a49;
+    box-shadow: 0 8px 20px rgba(43, 66, 48, 0.2);
+}
+
+.login-page .social-btn {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--primary-text);
+}
+
+.login-page .social-btn:hover {
+    border-color: #a5b4a8;
+    background: #f5f7f3;
+    box-shadow: 0 4px 12px rgba(43, 66, 48, 0.08);
+}
+
+.login-page .signup-link,
+.login-page .forgot-password {
+    color: var(--secondary-text);
+}
+
+.login-page .signup-link a,
+.login-page .forgot-password a {
+    color: var(--primary-green);
+}
+
+.login-page .language-selector {
+    position: static;
+    width: fit-content;
+    margin: 0 0 14px auto;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.login-page .language-selector label {
+    color: var(--primary-text);
+}
+
+.login-page .language-selector select {
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    color: var(--primary-text);
+}
+
+.login-page .language-selector select:hover,
+.login-page .language-selector select:focus {
+    border-color: #8dab96;
+    box-shadow: 0 0 0 3px rgba(83, 111, 93, 0.12);
+}
+
+/* Dashboard */
+.dashboard-header {
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 4px 18px rgba(43, 66, 48, 0.05);
+    color: var(--primary-text);
+}
+
+.dashboard-header .header-content {
+    min-height: 68px;
+}
+
+.dashboard-header .header-left {
+    gap: 15px;
+}
+
+.dashboard-header .sidebar-toggle {
+    position: static;
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-header h1 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 2.4vw, 26px);
+    font-weight: 500;
+}
+
+.dashboard-header .user-info span,
+.dashboard-header #userName {
+    color: var(--secondary-text);
+}
+
+.dashboard-header .logout-btn {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--soft-sage);
+    color: var(--primary-green);
+}
+
+.dashboard-header .logout-btn:hover {
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.dashboard-content {
+    max-width: 1160px;
+    padding-top: 34px;
+    padding-bottom: 50px;
+}
+
+.upload-section,
+.loading-indicator,
+.result-card,
+.disease-information-section {
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.upload-section h2,
+.results-section h2 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+}
+
+.upload-btn {
+    border-color: #b8c8b8;
+    border-radius: 10px;
+    background: #f7f9f5;
+    color: var(--primary-green);
+}
+
+.upload-btn:hover {
+    border-color: var(--primary-green);
+    background: var(--soft-sage);
+}
+
+.upload-icon,
+.result-card h3,
+.disease-information-section h3,
+.treatment-header h3 {
+    color: var(--primary-green);
+}
+
+.image-preview,
+.disease-info-group {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #f7f9f5;
+}
+
+.loading-indicator p,
+.disease-description,
+.disease-info-group p,
+.disease-info-group ul {
+    color: var(--secondary-text);
+}
+
+.result-card,
+.disease-information-section {
+    border-left: 4px solid #9caf9b;
+}
+
+.disease-name {
+    color: var(--primary-green);
+}
+
+.disease-info-group h4 {
+    color: var(--primary-text);
+}
+
+.treatment-list li {
+    border-color: var(--border-color);
+    color: var(--secondary-text);
+}
+
+.treatment-list li::before {
+    color: var(--primary-green);
+}
+
+.btn-capture,
+.btn-analyze,
+.btn-action {
+    border-radius: 8px;
+    background: var(--primary-green);
+}
+
+.btn-capture:hover,
+.btn-analyze:hover,
+.btn-action:hover {
+    background: #405a49;
+    box-shadow: 0 8px 20px rgba(43, 66, 48, 0.17);
+}
+
+.btn-action.secondary {
+    border: 1px solid #a5b4a8;
+    background: var(--card-bg);
+    color: var(--primary-green);
+}
+
+.btn-action.secondary:hover {
+    background: var(--soft-sage);
+}
+
+.spinner {
+    border-color: var(--soft-sage);
+    border-top-color: var(--primary-green);
+}
+
+.education-icon-btn {
+    background: var(--primary-green);
+    box-shadow: 0 6px 18px rgba(43, 66, 48, 0.22);
+}
+
+.education-icon-btn:hover {
+    background: #405a49;
+    box-shadow: 0 8px 22px rgba(43, 66, 48, 0.25);
+}
+
+/* Education */
+.education-container {
+    background: var(--page-bg);
+}
+
+.education-header {
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 4px 18px rgba(43, 66, 48, 0.05);
+    color: var(--primary-text);
+}
+
+.education-header h1 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+}
+
+.education-header p {
+    margin-bottom: 0;
+    color: var(--secondary-text);
+    opacity: 1;
+}
+
+.education-header .header-content {
+    padding-left: 80px;
+}
+
+.education-content {
+    padding-top: 32px;
+}
+
+.intro-section,
+.stat-card,
+.search-section,
+.bookmarks-section,
+.disease-card,
+.modal-content {
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.intro-section h2,
+.diseases-section h2,
+.bookmarks-section h2 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+}
+
+.intro-section p,
+.stat-card p,
+.disease-card-description,
+.disease-info-section p,
+.disease-info-section li {
+    color: var(--secondary-text);
+}
+
+.stat-card h3 {
+    color: var(--primary-green);
+}
+
+.stat-card:hover,
+.disease-card:hover {
+    box-shadow: 0 12px 28px rgba(43, 66, 48, 0.1);
+}
+
+.search-bar {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fbfcfa;
+    color: var(--primary-text);
+}
+
+.search-bar:focus {
+    border-color: #8dab96;
+    box-shadow: 0 0 0 3px rgba(83, 111, 93, 0.12);
+}
+
+.filter-btn {
+    border: 1px solid var(--border-color);
+    background: #f8faf7;
+    color: var(--secondary-text);
+}
+
+.filter-btn:hover {
+    background: var(--soft-sage);
+}
+
+.filter-btn.active,
+.tip-next-btn,
+.card-btn:hover,
+.card-bookmark-btn.bookmarked,
+.clear-bookmarks-btn {
+    border-color: var(--primary-green);
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.tips-section {
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    background: #eef1eb;
+    color: var(--primary-text);
+}
+
+.tip-card {
+    border-left-color: #9caf9b;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.68);
+}
+
+.tip-card p {
+    color: var(--secondary-text);
+    opacity: 1;
+}
+
+.tip-next-btn:hover {
+    background: #405a49;
+}
+
+.disease-card-header,
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    background: var(--soft-sage);
+    color: var(--primary-text);
+}
+
+.disease-card-header h3,
+.modal-header h2 {
+    color: var(--primary-text);
+}
+
+.disease-type-badge {
+    background: #fff;
+    color: var(--primary-green);
+}
+
+.disease-card-footer {
+    border-color: var(--border-color);
+}
+
+.card-btn {
+    border: 1px solid #a5b4a8;
+    color: var(--primary-green);
+}
+
+.card-btn:hover {
+    border-color: var(--primary-green);
+}
+
+.card-bookmark-btn {
+    border: 1px solid var(--border-color);
+    color: var(--primary-green);
+}
+
+.modal {
+    background: rgba(31, 44, 36, 0.48);
+}
+
+.modal-close {
+    color: var(--secondary-text);
+}
+
+.modal-close:hover {
+    color: var(--primary-text);
+}
+
+.modal-actions .action-btn {
+    border: 1px solid #a5b4a8;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--primary-green);
+}
+
+.modal-actions .action-btn:hover {
+    background: #fff;
+    color: var(--primary-text);
+}
+
+.disease-info-section h3,
+.remedy-tab.active,
+.remedy-tab:hover {
+    color: var(--primary-green);
+}
+
+.remedies-tabs {
+    border-color: var(--border-color);
+}
+
+.remedy-tab.active {
+    border-bottom-color: var(--primary-green);
+}
+
+.module-link {
+    border-color: #a5b4a8;
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.module-link:hover {
+    background: #405a49;
+}
+
+.bookmark-item {
+    border: 1px solid var(--border-color);
+    background: #f7f9f5;
+    color: var(--primary-text);
+}
+
+.bookmark-item:hover {
+    background: var(--soft-sage);
+}
+
+.clear-bookmarks-btn:hover {
+    background: #405a49;
+}
+
+/* Diet plan */
+.diet-container {
+    width: min(1120px, calc(100% - 48px));
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 84px 0 60px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.diet-label {
+    color: var(--primary-green);
+}
+
+.diet-header h1,
+.diet-card h2,
+.diet-section-content h3 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+}
+
+.diet-subtitle,
+.diet-card p,
+.diet-section-content p,
+.diet-section-content ul {
+    color: var(--secondary-text);
+}
+
+.diet-condition-pill {
+    border-color: #d7e0d5;
+    background: var(--soft-sage);
+    color: var(--primary-green);
+}
+
+.diet-focus {
+    gap: 18px;
+}
+
+.diet-card,
+.diet-tab-panel {
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.diet-card-highlight {
+    border-color: var(--border-color);
+}
+
+.diet-tab {
+    border-color: var(--border-color);
+    color: var(--secondary-text);
+}
+
+.diet-tab.active {
+    border-color: var(--primary-green);
+    background: var(--primary-green);
+    box-shadow: 0 7px 18px rgba(43, 66, 48, 0.15);
+    color: #fff;
+}
+
+.diet-tab:hover {
+    border-color: #a5b4a8;
+    background: var(--soft-sage);
+}
+
+.diet-tab.active:hover {
+    background: #405a49;
+}
+
+/* Doctor consultation */
+.consultation-container {
+    padding-top: 84px;
+}
+
+.consultation-label {
+    color: var(--primary-green);
+}
+
+.consultation-header h1 {
+    color: var(--primary-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+}
+
+.consultation-subtitle,
+.section-heading p,
+.location-status,
+.contact-status,
+.place-card-text p,
+.place-card-details,
+.map-caption,
+.contact-help,
+.provider-contact-card > p,
+.provider-contact-note {
+    color: var(--secondary-text);
+}
+
+.consultation-panel,
+.place-card,
+.provider-contact-card {
+    border-color: var(--border-color);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.section-heading h2,
+.map-heading h2,
+.place-card-text h3,
+.provider-contact-card h3 {
+    color: var(--primary-text);
+}
+
+.section-icon {
+    border: 1px solid var(--border-color);
+    background: var(--soft-sage);
+}
+
+.consultation-nav-link,
+.location-button,
+.search-button,
+.contact-button,
+.contact-action,
+.provider-action {
+    border: 1px solid var(--primary-green);
+    border-radius: 8px;
+    background: var(--primary-green);
+}
+
+.consultation-nav-link:hover,
+.location-button:hover,
+.search-button:hover,
+.contact-button:hover,
+.contact-action:hover,
+.provider-action:hover {
+    background: #405a49;
+}
+
+.consultation-nav-link.secondary {
+    border-color: #a5b4a8;
+    background: var(--card-bg);
+    color: var(--primary-green);
+}
+
+.consultation-nav-link.secondary:hover {
+    background: var(--soft-sage);
+}
+
+.place-search-form label,
+.provider-contact-form label {
+    color: var(--primary-text);
+}
+
+.place-search-form select,
+.place-search-form input,
+.provider-contact-form input {
+    border-color: var(--border-color);
+    border-radius: 8px;
+    color: var(--primary-text);
+}
+
+.place-search-form select:focus,
+.place-search-form input:focus,
+.provider-contact-form input:focus {
+    border-color: #8dab96;
+    outline-color: rgba(83, 111, 93, 0.16);
+}
+
+.maps-link,
+.map-open-link,
+.place-card-details a,
+.place-details-button,
+.provider-directions {
+    color: var(--primary-green);
+}
+
+.map-placeholder,
+.places-map {
+    background-color: #e9efe7;
+}
+
+.map-pin {
+    background: var(--primary-green);
+    box-shadow: 0 8px 22px rgba(43, 66, 48, 0.2);
+}
+
+.map-preview-label {
+    color: var(--primary-text);
+}
+
+.provider-action.whatsapp-provider,
+.message-action {
+    background: #55745e;
+}
+
+.provider-action.whatsapp-provider:hover {
+    background: #405a49;
+}
+
+.consultation-note {
+    border-left-color: #b5a477;
+    background: #f8f7f1;
+    color: #686553;
+}
+
+/* Feedback */
+.feedback-header {
+    border-bottom-color: var(--border-color);
+}
+
+.feedback-main {
+    background: transparent;
+}
+
+.feedback-card {
+    border-color: var(--border-color);
+    border-radius: 16px;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.feedback-card h1 {
+    color: var(--primary-text);
+}
+
+.rating-options label.is-selected {
+    border-color: var(--primary-green);
+    background: var(--soft-sage);
+    color: var(--primary-green);
+}
+
+.feedback-card select,
+.feedback-card textarea {
+    border-color: var(--border-color);
+    border-radius: 8px;
+}
+
+.feedback-card select:focus,
+.feedback-card textarea:focus {
+    border-color: #8dab96;
+    box-shadow: 0 0 0 3px rgba(83, 111, 93, 0.12);
+}
+
+.submit-feedback {
+    border-color: var(--primary-green);
+    border-radius: 8px;
+    background: var(--primary-green);
+}
+
+.submit-feedback:hover:not(:disabled) {
+    background: #405a49;
+}
+
+@media (max-width: 600px) {
+    .login-page {
+        padding: 26px 14px;
+    }
+
+    .login-page .login-card {
+        padding: 30px 22px;
+    }
+
+    .dashboard-header .header-content {
+        padding-inline: 14px;
+    }
+
+    .dashboard-header .header-left {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .dashboard-content {
+        padding: 24px 14px 36px;
+    }
+
+    .diet-container {
+        width: calc(100% - 32px);
+        padding-top: 76px;
+    }
+
+    .consultation-container {
+        padding-top: 76px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:not(.essentials-page) *,
+    body:not(.essentials-page) *::before,
+    body:not(.essentials-page) *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
