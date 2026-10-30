@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData();
             formData.append('file', imageFile);
 
-            const response = await fetch('http://127.0.0.1:8001/predict', {
+            const response = await fetch('https://skin-disease-backend-6m09.onrender.com/predict', {
                 method: 'POST',
                 body: formData,
             });
